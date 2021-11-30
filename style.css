@@ -26,6 +26,10 @@ html{
   scroll-behavior: smooth;
 }
 
+body{
+  overflow-x: hidden;
+}
+
 section{
   padding:2rem 9%;
 }
