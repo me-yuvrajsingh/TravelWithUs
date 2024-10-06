@@ -2,10 +2,22 @@ let searchBtn = document.querySelector('#search-btn');
 let searchBar = document.querySelector('.search-bar-container');
 let formBtn = document.querySelector('#login-btn');
 let loginForm = document.querySelector('.login-form-container');
-let formClose = document.querySelector('#form-close');
+let signupForm = document.querySelector('.signup-form');
+let formClose = document.querySelectorAll('#form-close');
 let menu = document.querySelector('#menu-bar');
 let navbar = document.querySelector('.navbar');
 let videoBtn = document.querySelectorAll('.vid-btn');
+
+function openSignupForm(){
+  console.log("cakked")
+  loginForm.classList.remove("active")
+  signupForm.classList.add("active")
+}
+function openLoginForm(){
+  console.log("cakked")
+  loginForm.classList.add("active")
+  signupForm.classList.remove("active")
+}
 
 window.onscroll = () =>{
     searchBtn.classList.remove('fa-times');
@@ -29,8 +41,11 @@ formBtn.addEventListener('click', () =>{
     loginForm.classList.add('active');
 });
 
-formClose.addEventListener('click', () =>{
-    loginForm.classList.remove('active');
+formClose.forEach(elem=>{
+      elem.addEventListener('click', () =>{
+      loginForm.classList.remove('active');
+      signupForm.classList.remove('active');
+  })
 });
 
 videoBtn.forEach(btn =>{

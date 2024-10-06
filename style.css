@@ -34,6 +34,10 @@ section{
   padding:2rem 9%;
 }
 
+.d-none{
+  display: none !important;
+}
+
 .heading{
   text-align: center;
   padding:2.5rem 0
@@ -79,14 +83,14 @@ header{
   padding:1.5rem 3%;
 }
 
-header .logo{
-  font-size: 2rem;
+.logo{
+  font-size: 2rem !important;
   font-weight: bolder;
   color:#fff;
   text-transform: uppercase;
 }
 
-header .logo span{
+.logo span{
   color:var(--maincolor);
 }
 
@@ -213,13 +217,14 @@ header .search-bar-container label:hover{
   color:#666;
 }
 
-.login-form-container form p a{
+.login-form-container form p a, .login-form-container form p span{
   color:var(--maincolor);
 }
 
-.login-form-container form p a:hover{
+.login-form-container form p a:hover, .login-form-container form p span:hover{
   color:#333;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .login-form-container #form-close{

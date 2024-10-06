@@ -62,7 +62,28 @@
         <input type="checkbox" id="remember">
         <label for="remember">remember me</label>
         <p>forget password? <a href="#">click here</a></p>
-        <p>don't have and account? <a href="#">register now</a></p>
+        <p>don't have and account? <span onclick="openSignupForm()">register now<span/></p>
+    </form>
+
+</div>
+
+<!-- singup form  -->
+<div class="login-form-container signup-form">
+
+    <i class="fas fa-times" id="form-close"></i>
+
+    <form action="">
+        <h3>Create Account</h3>
+        <input type="text" class="box" placeholder="Full Name">
+        <input type="text" class="box" placeholder="Username">
+        <input type="email" class="box" placeholder="Email">
+        <input type="password" class="box" placeholder="Password">
+        <input type="password" class="box" placeholder="Confirm Password">
+        <input type="submit" value="Create Account" class="btn">
+        <input type="checkbox" id="remember">
+        <label for="remember">remember me</label>
+        <!-- <p>forget password? <a href="#">click here</a></p> -->
+        <p>Already have an account? <span onclick="openLoginForm()">Login now</span></p>
     </form>
 
 </div>
@@ -117,14 +138,14 @@
         <form action="">
             <div class="inputBox">
                 <h3>where to</h3>
-                <input type="text" placeholder="place name">
+                <input type="text" placeholder="Destination">
             </div>
             <div class="inputBox">
                 <h3>how many</h3>
-                <input type="number" placeholder="number of guests">
+                <input type="number" placeholder="No of Peoples">
             </div>
             <div class="inputBox">
-                <h3>arrivals</h3>
+                <h3>arrival</h3>
                 <input type="date">
             </div>
             <div class="inputBox">
@@ -518,14 +539,14 @@
 
         <form action="">
             <div class="inputBox">
-                <input type="text" placeholder="name">
-                <input type="email" placeholder="email">
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
             </div>
             <div class="inputBox">
-                <input type="number" placeholder="number">
-                <input type="text" placeholder="subject">
+                <input type="number" placeholder="Phn Number">
+                <input type="text" placeholder="Subject">
             </div>
-            <textarea placeholder="message" name="" id="" cols="30" rows="10"></textarea>
+            <textarea placeholder="Your Message" name="" id="" cols="30" rows="10"></textarea>
             <input type="submit" class="btn" value="send message">
         </form>
 
@@ -558,8 +579,12 @@
     <div class="box-container">
 
         <div class="box">
-            <h3>about us</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quas magni pariatur est accusantium voluptas enim nemo facilis sit debitis.</p>
+            <a href="#" class="logo"><h1> <span>T</span>ravel<span>W</span>ith<span>U</span>s</h1></a>
+            <!-- <h3>about us</h3> -->
+            <p>Aims to provide the best, affordable, memorable and a safe Travel Experience</p>
+            <a href="#">workemail@example.com</a>
+            <a href="#">+91 76363543</a>
+            <a href="#">Around Marine Drive, Telibandha Road, Raipur, C.G</a>
         </div>
         <div class="box">
             <h3>branch locations</h3>
