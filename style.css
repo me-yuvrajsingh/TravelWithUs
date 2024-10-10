@@ -26,10 +26,6 @@ html{
   scroll-behavior: smooth;
 }
 
-body{
-  overflow-x: hidden;
-}
-
 section{
   padding:2rem 9%;
 }
@@ -192,6 +188,10 @@ header .search-bar-container label:hover{
   margin:.6rem 0;
   border:.1rem solid rgba(0,0,0,.3);
   text-transform: none;
+}
+
+.box img:hover{
+  transform: scale(1.1);
 }
 
 .login-form-container form .box:focus{

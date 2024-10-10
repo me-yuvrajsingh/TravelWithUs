@@ -1,0 +1,420 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+body, html {
+    font-family: Arial, sans-serif;
+    /* overflow-x: hidden; */
+}
+
+.img-bg{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: -1;
+}
+.img-bg img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+strike{
+    text-decoration: line-through;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    z-index: 0;
+    /* background-image: url('./images/p-1.jpg');
+    background-size: cover; */
+    position: relative;
+    display: flex;
+    background-color: transparent;
+}
+.overlay-wrapper{
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.719);
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+.left-div, .right-div{
+    position: relative;
+    height: 100%;
+    width: 49%;
+    gap: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: transparent;
+    z-index: 2;
+    flex-direction: column;
+    padding: 2rem;
+}
+.destination-desc{
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.original-price{
+    font-size: small;
+}
+.right-div {
+    align-items: end;
+    flex-wrap: wrap;
+}
+.right-div img{
+    height: 300px;
+    width: 500px;
+    background-color: white;
+    padding: 1rem;
+    object-fit: cover;
+    position: absolute;
+    margin: auto 0;
+}
+.right-div img:hover > .right-div img:nth-child(1){
+    transform: rotate(14deg);
+}
+.right-div img:hover > .right-div img:nth-child(2){
+    transform: rotate(-14deg);
+}
+.right-div img:nth-child(1){
+   transform: rotate(7deg);
+}
+.right-div img:nth-child(2){
+   transform: rotate(-7deg);
+}
+.destination-name{
+    font-size: 7rem;
+    font-weight: bolder;
+    color: white;
+    text-transform: uppercase;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.destination-name span{
+    text-transform: uppercase;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--maincolor);
+}
+
+.btn{
+    height: 46px;
+    width: 138px;
+    text-align: center;
+    background-color: var(--maincolor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.content-box{
+    padding: 2rem;
+}
+.packages{
+    padding: 0 !important;
+    flex-direction: column;
+    align-items: start !important;
+}
+.packages-btn{
+    width: 6rem !important;
+}
+.packages .content{
+    margin: 0 !important;
+}
+.packages .box-container{
+    margin-top: 3rem !important;
+}
+.packages .container{
+    justify-content: space-between !important;
+    height: fit-content !important;
+}
+.packages .content .ratings{
+    font-size: 1.2rem !important;
+}
+
+.details-cont{
+    height: fit-content;
+    width: 100vw;
+    background-color: var(--dull-white);
+    z-index: 3;
+    position: relative;
+    padding: 2rem 5rem;
+}
+
+.underline {
+    position: absolute;
+    bottom: 0; /* Position it at the bottom of the sub-nav */
+    left: 0; /* Start from the left */
+    height: 2px; /* Height of the underline */
+    width: 0; /* Initial width */
+    background: var(--maincolor); /* Color of the underline */
+    transition: width 0.3s ease, left 0.3s ease; /* Smooth transition */
+}
+
+.btn{
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 0 !important;
+}
+
+.sub-nav{
+    width: 100%;
+    height: 65px;
+    display: flex;
+    gap: 64px;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    padding: 1rem 3rem;
+    background-color: white;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    color: #333333;
+    font-weight: 600;
+    z-index: 10;
+    margin-top: 2rem !important;
+}
+.sub-nav div{
+    gap: 6rem;
+}
+.book-btn .btn{
+    margin:0 !important;
+    border-radius: 30px;
+}
+
+.sn-li{
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    font-size: 1.8rem;
+}
+.sn-li.active{
+    color: var(--maincolor);
+}
+.sub-nav, .dc-conts, .stays-wrapper{
+    box-shadow: var(--box-shadow);
+    border-radius: 8px;
+}
+.left-div img{
+    height: 300px;
+    width: 500px;
+}
+.dc-conts{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    margin-top: 4rem;
+    padding: 3rem !important;
+}
+.location-details{
+    font-size: 2rem;
+    font-style: italic;
+    color: #5f5f5f;
+    line-height: 1.5;
+}
+.dc-conts .left-div, .dc-conts .right-div{
+    align-items: start;
+    padding: 0 !important;
+    justify-content: center;
+}
+
+
+.bttv-cont{
+    flex-direction: column;
+    align-items: start;
+}
+.bttv-main-text{
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+.bttv-sub-text{
+    font-size: 1rem;
+}
+.bttv-details{
+    border-radius: 8px;
+    width: 100%;
+    margin-top: 3rem;
+    box-shadow: var(--box-shadow);
+}
+.up, .down{
+    width: 100%;
+    padding: 2rem;
+}
+.up{
+    padding: 0;
+    display: flex;
+}
+.down{
+    font-size: 1.5rem;
+}
+.seasons{
+    margin-right: 2rem;
+    padding: 2rem;
+    cursor: pointer;
+}
+.seasons.active .months{
+    color: var(--maincolor);
+}
+.bttv-details .up .active{
+    border-bottom: 2px solid var(--maincolor);
+    font-weight: 700;
+}
+.seasons .months{
+    font-size: 2rem;
+}
+.seasons .condition{
+    font-size: 1.3rem;
+    text-align: center;
+    margin-top: 6px;
+}
+.seasons.peak .condition{
+    color: #0cde0c;
+}
+.seasons.moderate .condition{
+    color: #2196f3;
+}
+.seasons.off .condition{
+    color: red;
+}
+.tyl{
+    margin-top: 8px;
+}
+
+/* stays hotel  */
+.stayPlaces{
+    flex-direction: column;
+    gap: 16px;
+}
+.stay-here{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 16px;
+}
+.sht{
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+.view-all{
+    display: flex;
+    align-items: center;
+}
+.stays-wrapper{
+    width: 100%;
+    padding: 2rem;
+}
+.stays{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.stays .left .hotel-type{
+    font-size: 1.8rem;
+    margin-bottom: 4px;
+}
+.main-text{
+    font-size: 3rem;
+    margin-bottom: 0px;
+    font-weight: 700;
+}
+.sub-text{
+    font-size: 1.5rem;
+    color: grey;
+    text-transform: capitalize;
+}
+.explore-hotels .fs-angle-down{
+    margin-left: 4px;
+    position: relative;
+    top: 2px;
+}
+.stays .right{
+    display: flex;
+}
+.stays .right .price{
+    text-align: end;
+    margin-right: 2rem;
+}
+.stays .right .avg-price{
+    font-size: 2rem;
+}
+.stays .right .explore-hotels{
+    font-size: 1.5rem;
+    color: var(--maincolor);
+    text-align: end;
+    cursor: pointer;
+}
+.hotels-list{
+    width: 100%;
+    display: none;
+    gap: 16px;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    height: 0px;
+    padding: 1rem;
+    margin-top: 8px;
+}
+.hotels-list-visible{
+    height: 200px;
+}
+.hotel{
+    min-height: 150px;
+    min-width: 400px;
+    padding: 16px;
+    box-shadow: var(--box-shadow);
+    border-radius: 8px;
+}
+.hotel-details{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 16px;
+}
+.hotel-img img{
+    height: 88px;
+    width: 88px;
+    object-fit: cover;
+}
+.hotel-name .name{
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.hotel-pricing{
+    width: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+}
+.hotel-rating{
+    border-radius: 20px;
+    background-color: var(--maincolor);
+    color: white;
+    padding: 4px 14px;
+    font-size: 1.4rem;
+}
+.hotel-price{
+    text-align: end;
+}
+.hotel-price .price{
+    font-size: 2rem;
+    font-weight: 600;
+}
+#book{
+    margin-top: 6rem;
+}

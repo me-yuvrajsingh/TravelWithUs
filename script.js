@@ -14,7 +14,6 @@ function openSignupForm(){
   signupForm.classList.add("active")
 }
 function openLoginForm(){
-  console.log("cakked")
   loginForm.classList.add("active")
   signupForm.classList.remove("active")
 }
