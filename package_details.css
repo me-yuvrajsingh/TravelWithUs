@@ -22,6 +22,10 @@ body, html {
     object-fit: cover;
 }
 
+.right-div img:nth-child(3):hover ~ .right-div img:nth-child(1){
+    transform: rotate();
+}
+
 strike{
     text-decoration: line-through;
 }
@@ -79,15 +83,23 @@ strike{
     object-fit: cover;
     position: absolute;
     margin: auto 0;
+    z-index: 0;
 }
-.right-div img:hover > .right-div img:nth-child(1){
+.hover-img:nth-child(1):hover ~ .hover-img:nth-child(3){
     transform: rotate(14deg);
 }
-.right-div img:hover > .right-div img:nth-child(2){
+.hover-img:nth-child(1):hover ~ .hover-img:nth-child(2){
     transform: rotate(-14deg);
 }
-.right-div img:nth-child(1){
+.right-div img:nth-child(3){
    transform: rotate(7deg);
+}
+.right-div img:nth-child(1):hover{
+   transform: scale(1.1);
+}
+.right-div img:nth-child(1){
+   transform: rotate(0deg);
+   z-index: 1;
 }
 .right-div img:nth-child(2){
    transform: rotate(-7deg);

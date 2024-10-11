@@ -64,16 +64,27 @@ if (firstActive) {
 }
 
 window.onscroll=()=>{
+    let active=false;
+    const underline = document.querySelector('.underline');
     document.querySelectorAll(".dc-conts").forEach((elem)=>{
-        const underline = document.querySelector('.underline');
         document.querySelector(`a[href='#${elem.id}']`).classList.remove("active")
-        // underline.style.display='none'
         if(elem.getBoundingClientRect().top < 116 && elem.getBoundingClientRect().bottom > 116){
             // moveUnderline(document.querySelector(`a[href='#${elem.id}']`))
-            document.querySelector(`a[href='#${elem.id}']`).classList.add("active")
+            if(elem.id!=''){
+                document.querySelector(`a[href='#${elem.id}']`).classList.add("active")
+            }
             // underline.style.display="block";
+            active=true
             underline.style.width = `${document.querySelector(`a[href='#${elem.id}']`).offsetWidth}px`;
             underline.style.left = `${document.querySelector(`a[href='#${elem.id}']`).offsetLeft}px`;
         }
+        // !elem.classList.contains("active") && noneActive==true ? noneActive=true : noneActive=false;
+        // if(elem.classList.contains("active")){
+        //     active=true;
+        // }
     })
+    if(!active){
+        console.log("none")
+        underline.style.width=0;
+    }
 }
