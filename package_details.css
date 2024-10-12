@@ -10,6 +10,23 @@ body, html {
     /* overflow-x: hidden; */
 }
 
+.switch-theme{
+    position: fixed;
+    right: 4rem;
+    bottom: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    border-radius: 50%;
+    color: white;
+    height: 48px;
+    width: 48px;
+    background-color: var(--maincolor);
+    z-index: 99;
+    cursor: pointer;
+}
+
 .img-bg{
     height: 100vh;
     width: 100vw;

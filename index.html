@@ -8,10 +8,14 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
     <!-- font awesome cdn link  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- custom css file link  -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index_dark_theme.css">
+    <link rel="stylesheet" href="root.css">
+
+    <!-- cdn link for axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 </head>
 <body style="overflow-x: hidden">
@@ -56,9 +60,9 @@
 
     <form action="">
         <h3>login</h3>
-        <input type="email" class="box" placeholder="enter your email">
-        <input type="password" class="box" placeholder="enter your password">
-        <input type="submit" value="login now" class="btn">
+        <input type="email" class="box lemail" placeholder="enter your email">
+        <input type="password" class="box lpassword" placeholder="enter your password">
+        <input type="submit" value="login now" class="btn login_btn">
         <input type="checkbox" id="remember">
         <label for="remember">remember me</label>
         <p>forget password? <a href="#">click here</a></p>
@@ -74,12 +78,12 @@
 
     <form action="">
         <h3>Create Account</h3>
-        <input type="text" class="box" placeholder="Full Name">
-        <input type="text" class="box" placeholder="Username">
-        <input type="email" class="box" placeholder="Email">
-        <input type="password" class="box" placeholder="Password">
-        <input type="password" class="box" placeholder="Confirm Password">
-        <input type="submit" value="Create Account" class="btn">
+        <input type="text" class="box fullname" placeholder="Full Name">
+        <input type="text" class="box username" placeholder="Username">
+        <input type="email" class="box email" placeholder="Email">
+        <input type="password" class="box password" placeholder="Password">
+        <input type="password" class="box confirm_password" placeholder="Confirm Password">
+        <input type="submit" value="Create Account" class="btn signup_btn">
         <input type="checkbox" id="remember">
         <label for="remember">remember me</label>
         <!-- <p>forget password? <a href="#">click here</a></p> -->
@@ -138,21 +142,21 @@
         <form action="">
             <div class="inputBox">
                 <h3>where to</h3>
-                <input type="text" placeholder="Destination">
+                <input type="text" class="whereto" placeholder="Destination">
             </div>
             <div class="inputBox">
                 <h3>how many</h3>
-                <input type="number" placeholder="No of Peoples">
+                <input type="number" class="howmany" placeholder="No of Peoples">
             </div>
             <div class="inputBox">
                 <h3>arrival</h3>
-                <input type="date">
+                <input type="date" class="arrival">
             </div>
             <div class="inputBox">
                 <h3>leaving</h3>
-                <input type="date">
+                <input type="date" class="leaving">
             </div>
-            <input type="submit" class="btn" value="book now">
+            <input type="submit" class="btn booknow_btn" value="book now">
         </form>
 
     </div>
@@ -551,15 +555,15 @@
 
         <form action="">
             <div class="inputBox">
-                <input type="text" placeholder="Name">
-                <input type="email" placeholder="Email">
+                <input type="text" placeholder="Name" class="contact_name">
+                <input type="email" placeholder="Email" class="contact_email">
             </div>
             <div class="inputBox">
-                <input type="number" placeholder="Phn Number">
-                <input type="text" placeholder="Subject">
+                <input type="number" placeholder="Phn Number" class="contact_phone">
+                <input type="text" placeholder="Subject" class="contact_subject">
             </div>
-            <textarea placeholder="Your Message" name="" id="" cols="30" rows="10"></textarea>
-            <input type="submit" class="btn" value="send message">
+            <textarea placeholder="Your Message" class="contact_message" name="" id="" cols="30" rows="10"></textarea>
+            <input type="submit" class="btn contact_btn" value="send message">
         </form>
 
     </div>
@@ -652,6 +656,5 @@
 
 <!-- custom js file link  -->
 <script src="script.js"></script>
-
 </body>
 </html>

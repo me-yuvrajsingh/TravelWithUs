@@ -1,0 +1,30 @@
+@media (prefers-color-scheme: dark) {
+    section{
+        background-color: black;
+    }
+    #book form{
+        background-color: var(--black-light);
+    }
+    input, textarea{
+        background-color: var(--black-light-2) !important;
+        color: white !important;
+    }
+    .services .box-container .box{
+        background-color: var(--black-light);
+    }
+    #packages .box{
+        background-color: var(--black-light);
+    }
+    .gallery .box-container .box{
+        border-color: var(--black-light);
+    }
+    .services .box-container .box h3{
+        color: white;
+    }
+    .contact .row form{
+        background-color: var(--black-light);
+    }
+    .footer{
+        background-color: var(--black-light);
+    }
+}

@@ -2,6 +2,47 @@ let explr = document.querySelectorAll(".explr-txt")
 let seasons = document.querySelectorAll(".seasons");
 // let hotelsList = document.querySelectorAll(".hotels-list")
 
+//base api url
+const BASE_URL = "http://localhost:8000"
+
+//book now
+const whereto = document.querySelector(".whereto");
+const howmany = document.querySelector(".howmany");
+const arrival = document.querySelector(".arrival");
+const leaving = document.querySelector(".leaving");
+const booknow_button = document.querySelector(".booknow_btn");
+
+//functionality for booknow
+booknow_button.addEventListener("click",(event) => {
+    event.preventDefault();
+    
+    const user = localStorage.getItem("user");
+    const time = Date().split(" ")[4]
+    
+    if(user){
+        const userData = {
+            userid : JSON.parse(user).id,
+            where_to : whereto.value,
+            how_many : parseInt(howmany.value),
+            arrival : new Date(`${arrival.value}T${time}Z`),
+            leaving : new Date(leaving.value)
+        }
+        axios.post(`${BASE_URL}/api/booking`,userData)
+        .then(({data}) => console.log(data))
+        .catch((err) => console.log(err))
+        .finally(() => {
+            whereto.value = "";
+            howmany.value = "";
+            arrival.value = "";
+            leaving.value = "";
+        })
+    }else{
+        const anchorTag = document.createElement("a")
+        anchorTag.href = "/TravelWithUs"
+        anchorTag.click();
+    }
+})
+
 seasons.forEach((elem)=>{
     elem.onclick=()=>{
         seasons.forEach((elem)=>{
@@ -66,25 +107,60 @@ if (firstActive) {
 window.onscroll=()=>{
     let active=false;
     const underline = document.querySelector('.underline');
+    document.querySelector(".switch-theme").classList.add("animate__fadeOutDownBig")
     document.querySelectorAll(".dc-conts").forEach((elem)=>{
         document.querySelector(`a[href='#${elem.id}']`).classList.remove("active")
         if(elem.getBoundingClientRect().top < 116 && elem.getBoundingClientRect().bottom > 116){
-            // moveUnderline(document.querySelector(`a[href='#${elem.id}']`))
             if(elem.id!=''){
                 document.querySelector(`a[href='#${elem.id}']`).classList.add("active")
             }
-            // underline.style.display="block";
             active=true
             underline.style.width = `${document.querySelector(`a[href='#${elem.id}']`).offsetWidth}px`;
             underline.style.left = `${document.querySelector(`a[href='#${elem.id}']`).offsetLeft}px`;
         }
-        // !elem.classList.contains("active") && noneActive==true ? noneActive=true : noneActive=false;
-        // if(elem.classList.contains("active")){
-        //     active=true;
-        // }
     })
     if(!active){
         console.log("none")
         underline.style.width=0;
     }
+}
+
+window.onscrollend=()=>{
+    document.querySelector(".switch-theme").classList.remove("animate__fadeOutDownBig")
+}
+
+let elem;
+let switchTheme = document.querySelector(".switch-theme");
+if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+    switchTheme.children[0].classList.add("fa-sun")
+    switchTheme.children[0].classList.remove("fa-moon")
+}else{
+    switchTheme.children[0].classList.remove("fa-sun")
+    switchTheme.children[0].classList.add("fa-moon")
+}
+switchTheme.onclick=(e)=>{
+    switchTheme.children[0].style.transform='rotate(250deg)';
+    // switchTheme.children[0].style.opacity='0';
+    setTimeout(() => {
+        if(switchTheme.children[0].classList.contains("fa-moon")){
+        switchTheme.children[0].classList.remove("fa-moon")
+        switchTheme.children[0].classList.add("fa-sun")
+        document.querySelectorAll(".d-elem").forEach((elem)=>{
+            elem.classList.add("dark")
+        })
+    }else{
+        switchTheme.children[0].classList.remove("fa-sun")
+        switchTheme.children[0].classList.add("fa-moon")
+        document.querySelectorAll(".d-elem").forEach((elem)=>{
+            elem.classList.remove("dark")
+        })
+        }
+        // switchTheme.children[0].style.opacity='1';
+        setTimeout(() => {
+            switchTheme.children[0].style.transform='rotate(360deg)';
+        }, 100);
+    }, 100);
+    switchTheme.children[0].style.transform='rotate(0deg)';
+
+    elem=e.target;
 }

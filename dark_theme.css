@@ -1,0 +1,49 @@
+@media (prefers-color-scheme: dark) {
+    .sn-li.dark{
+        color: white;
+    }
+    .details-cont.dark{
+        background-color: var(--black);
+    }
+    .dc-conts.dark{
+        background-color: var(--black-light);
+        box-shadow: var(--box-shadow-black);
+        color: white;
+    }
+    .box.dark{
+        background-color: var(--black-light-2);
+        box-shadow: var(--box-shadow-black);
+    }
+    .packages .box-container .box .content h3{
+        color: white;
+    }
+    .bttv-details.dark{
+        box-shadow: var(--box-shadow-black);
+    }
+    .stays-wrapper.dark{
+        background-color: var(--black-light-2);
+        box-shadow: var(--box-shadow-black);
+    }
+    .hotel.dark{
+        box-shadow: var(--box-shadow-black);
+    }
+    #book.book.dark{
+        background-color: var(--black-light);
+        border-radius: 8px;
+    }
+    #book form.dark{
+        background-color: var(--black-light-2);
+        box-shadow: var(--box-shadow-black);
+    }
+    #book form.dark input{
+        background-color: var(--black-light);
+        /* box-shadow: var(--box-shadow-black); */
+        color: white;
+    }
+    .footer.dark{
+        background-color: var(--black-light-2);
+    }
+    .footer.dark .box{
+        box-shadow: none;
+    }
+  }
