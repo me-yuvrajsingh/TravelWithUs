@@ -66,25 +66,53 @@ if (firstActive) {
 window.onscroll=()=>{
     let active=false;
     const underline = document.querySelector('.underline');
+    document.querySelector(".switch-theme").classList.add("animate__fadeOutDownBig")
     document.querySelectorAll(".dc-conts").forEach((elem)=>{
         document.querySelector(`a[href='#${elem.id}']`).classList.remove("active")
         if(elem.getBoundingClientRect().top < 116 && elem.getBoundingClientRect().bottom > 116){
-            // moveUnderline(document.querySelector(`a[href='#${elem.id}']`))
             if(elem.id!=''){
                 document.querySelector(`a[href='#${elem.id}']`).classList.add("active")
             }
-            // underline.style.display="block";
             active=true
             underline.style.width = `${document.querySelector(`a[href='#${elem.id}']`).offsetWidth}px`;
             underline.style.left = `${document.querySelector(`a[href='#${elem.id}']`).offsetLeft}px`;
         }
-        // !elem.classList.contains("active") && noneActive==true ? noneActive=true : noneActive=false;
-        // if(elem.classList.contains("active")){
-        //     active=true;
-        // }
     })
     if(!active){
         console.log("none")
         underline.style.width=0;
     }
+}
+
+window.onscrollend=()=>{
+    document.querySelector(".switch-theme").classList.remove("animate__fadeOutDownBig")
+}
+
+let elem;
+let switchTheme = document.querySelector(".switch-theme");
+switchTheme.onclick=(e)=>{
+    switchTheme.children[0].style.transform='rotate(250deg)';
+    // switchTheme.children[0].style.opacity='0';
+    setTimeout(() => {
+        if(switchTheme.children[0].classList.contains("fa-moon")){
+        switchTheme.children[0].classList.remove("fa-moon")
+        switchTheme.children[0].classList.add("fa-sun")
+        document.querySelectorAll(".d-elem").forEach((elem)=>{
+            elem.classList.add("dark")
+        })
+    }else{
+        switchTheme.children[0].classList.remove("fa-sun")
+        switchTheme.children[0].classList.add("fa-moon")
+        document.querySelectorAll(".d-elem").forEach((elem)=>{
+            elem.classList.remove("dark")
+        })
+        }
+        // switchTheme.children[0].style.opacity='1';
+        setTimeout(() => {
+            switchTheme.children[0].style.transform='rotate(360deg)';
+        }, 100);
+    }, 100);
+    switchTheme.children[0].style.transform='rotate(0deg)';
+
+    elem=e.target;
 }
