@@ -24,6 +24,7 @@ body, html {
     width: 48px;
     background-color: var(--maincolor);
     z-index: 99;
+    cursor: pointer;
 }
 
 .img-bg{

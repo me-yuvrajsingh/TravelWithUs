@@ -90,6 +90,13 @@ window.onscrollend=()=>{
 
 let elem;
 let switchTheme = document.querySelector(".switch-theme");
+if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+    switchTheme.children[0].classList.add("fa-sun")
+    switchTheme.children[0].classList.remove("fa-moon")
+}else{
+    switchTheme.children[0].classList.remove("fa-sun")
+    switchTheme.children[0].classList.add("fa-moon")
+}
 switchTheme.onclick=(e)=>{
     switchTheme.children[0].style.transform='rotate(250deg)';
     // switchTheme.children[0].style.opacity='0';

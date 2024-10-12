@@ -35,6 +35,11 @@
         background-color: var(--black-light-2);
         box-shadow: var(--box-shadow-black);
     }
+    #book form.dark input{
+        background-color: var(--black-light);
+        /* box-shadow: var(--box-shadow-black); */
+        color: white;
+    }
     .footer.dark{
         background-color: var(--black-light-2);
     }
