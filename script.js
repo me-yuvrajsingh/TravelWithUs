@@ -7,6 +7,8 @@ let formClose = document.querySelectorAll('#form-close');
 let menu = document.querySelector('#menu-bar');
 let navbar = document.querySelector('.navbar');
 let videoBtn = document.querySelectorAll('.vid-btn');
+const package_details_card = document.querySelectorAll(".package_details_card")
+const box_container = document.querySelector(".box-container")
 
 //base api url
 const BASE_URL = "http://localhost:8000"
@@ -157,6 +159,18 @@ contact_button.addEventListener("click",(event)  => {
 
 })
 
+//functionality for package details
+package_details_card.forEach((item) => {
+  const a = document.createElement("a");
+  a.href = "/package_details.html"
+
+  item.addEventListener("click",() => {
+    const city = item.ariaValueText;  
+    localStorage.setItem("city_id",city)
+    a.click();
+  })
+})
+
 function isLogout(){
   const user = localStorage.getItem("user");
   if(user){
@@ -173,6 +187,7 @@ function isLogout(){
 }
 
 isLogout();
+
 
 function openSignupForm(){
   console.log("cakked")

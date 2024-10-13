@@ -116,8 +116,10 @@ app.post("/api/login",async (req,res) => {
 })
 
 
-app.get("/api/packages",(req,res) => {
-    return res.send(packages);
+app.get("/api/package_details/:city_id",async (req,res) => {
+    const {city_id} = req.params;
+    const getCityDetails = await prisma.packageDetail.findUnique({where : {id : city_id}})
+    res.json({...getCityDetails})
 })
 
 app.post("/api/logout",(req,res) => {

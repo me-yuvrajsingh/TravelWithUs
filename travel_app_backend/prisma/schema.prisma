@@ -47,3 +47,14 @@ model Contact{
     subject String
     message String
 }
+
+model PackageDetail{
+  id String @id @default(cuid())
+  place String
+  duration String
+  visiting_places String
+  accomodation String
+  price String
+  actual_price String
+  
+}

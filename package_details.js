@@ -1,6 +1,17 @@
 let explr = document.querySelectorAll(".explr-txt")
 let seasons = document.querySelectorAll(".seasons");
 // let hotelsList = document.querySelectorAll(".hotels-list")
+const destination_name = document.querySelector(".destination-name");
+const duration = document.querySelector(".duration");
+const visit_to = document.querySelector(".to-visit");
+const accomodation = document.querySelector(".accomodation");
+const pricing = document.querySelector(".discount_price");
+const actualPrice = document.querySelector(".actual_price");
+const best_time = document.querySelector(".best_time");
+const stays = document.querySelector(".stays");
+const star = document.querySelector(".star");
+const hotel_location = document.querySelectorAll(".hotel_location");
+
 
 //base api url
 const BASE_URL = "http://localhost:8000"
@@ -11,6 +22,32 @@ const howmany = document.querySelector(".howmany");
 const arrival = document.querySelector(".arrival");
 const leaving = document.querySelector(".leaving");
 const booknow_button = document.querySelector(".booknow_btn");
+
+//function to get details
+async function getDetails(){
+    const city_id = localStorage.getItem("city_id")
+    const {data} = await axios.get(`${BASE_URL}/api/package_details/${city_id}`)
+
+
+
+    destination_name.innerText = data.place;
+    duration.innerHTML = `Duration - ${data.duration}`;
+    visit_to.innerHTML = `Visiting Places - ${data.visiting_places}`;
+    accomodation.innerHTML = `Accomodations - ${data.accomodation}`;
+    pricing.innerHTML = `Price - ₹${data.price}`;
+    actualPrice.innerHTML = `₹${data.actual_price}`;
+    best_time.innerText = `Best time to visit ${data.place}`;
+    stays.innerText = `Stays in ${data.place}`
+
+    hotel_location.forEach((hotel) => {
+        hotel.innerText = data.place;
+    })
+    
+    console.log(data)
+
+}
+
+getDetails();
 
 //functionality for booknow
 booknow_button.addEventListener("click",(event) => {
@@ -38,7 +75,7 @@ booknow_button.addEventListener("click",(event) => {
         })
     }else{
         const anchorTag = document.createElement("a")
-        anchorTag.href = "/TravelWithUs"
+        anchorTag.href = "/"
         anchorTag.click();
     }
 })

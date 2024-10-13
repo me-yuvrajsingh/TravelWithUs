@@ -190,6 +190,10 @@ header .search-bar-container label:hover{
   text-transform: none;
 }
 
+.box{
+  cursor: pointer;
+}
+
 .box img:hover{
   transform: scale(1.1);
 }

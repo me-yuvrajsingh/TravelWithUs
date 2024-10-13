@@ -14,6 +14,8 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
     <link rel="stylesheet" href="dark_theme.css">
+    <!-- cdn link for axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="switch-theme animate__animated animate__bounceInUp"><i class="fa fa-moon"></i></div>
@@ -21,14 +23,14 @@
     <div class="container">
       <div class="overlay-wrapper"></div>
       <div class="left-div">
-        <div class="destination-name">Manali <span>Trek</span></div>
+        <div class="destination-name"></div>
         <div class="destination-desc">
-          <p class="duration">Duration - 2D/3N</p>
-          <p class="to-visit">Visiting Places - Pint 1, oiubt 2, oiubt 3</p>
-          <p class="accomodation">Accomodations - Train, bus</p>
+          <p class="duration"></p>
+          <p class="to-visit"></p>
+          <p class="accomodation"></p>
           <p class="pricing">
-            Price - ₹15,000
-            <span class="original-price"><strike>₹30,000</strike></span>
+            <span class="discount_price"></span>
+            <span class="original-price"><strike class="actual_price"></strike></span>
           </p>
         </div>
         <div class="btn-wrapper">
@@ -193,7 +195,7 @@
     </section>
 
       <div class="dc-conts dark d-elem bttv-cont" id="bttv">
-        <p class="bttv-main-text main-text">Best time to visit Manali</p>
+        <p class="bttv-main-text main-text best_time"></p>
         <p class="sub-text">All Year Round Destination</p>
         <div class="bttv-details dark d-elem">
           <div class="up">
@@ -219,7 +221,7 @@
       <div class="dc-conts dark d-elem stayPlaces" id="stays">
         <div class="stay-here">
           <div class="txt">
-            <p class="sht main-text">Stays in Manali</p>
+            <p class="sht main-text stays"></p>
             <p class="sub-text">Recommended Options</p>
           </div>
           <div class="view-all">View All -></div>
@@ -246,7 +248,7 @@
                 <div class="hotel-img"><img src="images/1.jpg" alt=""></div>
                 <div class="hotel-name">
                   <p class="name">Maharaja Agrasend Pratap Palace</p>
-                  <p class="locaiton">Manali</p>
+                  <p class="locaiton hotel_location">Manali</p>
                 </div>
               </div>
               <div class="hotel-pricing">
@@ -262,7 +264,7 @@
                 <div class="hotel-img"><img src="images/1.jpg" alt=""></div>
                 <div class="hotel-name">
                   <p class="name">Maharaja Agrasend Pratap Palace</p>
-                  <p class="locaiton">Manali</p>
+                  <p class="locaiton hotel_location">Manali</p>
                 </div>
               </div>
               <div class="hotel-pricing">
@@ -278,7 +280,7 @@
                 <div class="hotel-img"><img src="images/1.jpg" alt=""></div>
                 <div class="hotel-name">
                   <p class="name">Maharaja Agrasend Pratap Palace</p>
-                  <p class="locaiton">Manali</p>
+                  <p class="locaiton hotel_location">Manali</p>
                 </div>
               </div>
               <div class="hotel-pricing">
@@ -313,7 +315,7 @@
                 <div class="hotel-img"><img src="images/1.jpg" alt=""></div>
                 <div class="hotel-name">
                   <p class="name">Maharaja Agrasend Pratap Palace</p>
-                  <p class="locaiton">Manali</p>
+                  <p class="locaiton hotel_location">Manali</p>
                 </div>
               </div>
               <div class="hotel-pricing">
@@ -329,7 +331,7 @@
                 <div class="hotel-img"><img src="images/1.jpg" alt=""></div>
                 <div class="hotel-name">
                   <p class="name">Maharaja Agrasend Pratap Palace</p>
-                  <p class="locaiton">Manali</p>
+                  <p class="locaiton hotel_location">Manali</p>
                 </div>
               </div>
               <div class="hotel-pricing">
@@ -345,7 +347,7 @@
                 <div class="hotel-img"><img src="images/1.jpg" alt=""></div>
                 <div class="hotel-name">
                   <p class="name">Maharaja Agrasend Pratap Palace</p>
-                  <p class="locaiton">Manali</p>
+                  <p class="locaiton hotel_location">Manali</p>
                 </div>
               </div>
               <div class="hotel-pricing">
@@ -380,7 +382,7 @@
                 <div class="hotel-img"><img src="images/1.jpg" alt=""></div>
                 <div class="hotel-name">
                   <p class="name">Maharaja Agrasend Pratap Palace</p>
-                  <p class="locaiton">Manali</p>
+                  <p class="locaiton hotel_location">Manali</p>
                 </div>
               </div>
               <div class="hotel-pricing">
@@ -396,7 +398,7 @@
                 <div class="hotel-img"><img src="images/1.jpg" alt=""></div>
                 <div class="hotel-name">
                   <p class="name">Maharaja Agrasend Pratap Palace</p>
-                  <p class="locaiton">Manali</p>
+                  <p class="locaiton hotel_location">Manali</p>
                 </div>
               </div>
               <div class="hotel-pricing">
@@ -412,7 +414,7 @@
                 <div class="hotel-img"><img src="images/1.jpg" alt=""></div>
                 <div class="hotel-name">
                   <p class="name">Maharaja Agrasend Pratap Palace</p>
-                  <p class="locaiton">Manali</p>
+                  <p class="locaiton hotel_location">Manali</p>
                 </div>
               </div>
               <div class="hotel-pricing">
