@@ -162,12 +162,12 @@ contact_button.addEventListener("click",(event)  => {
 //functionality for package details
 package_details_card.forEach((item) => {
   const a = document.createElement("a");
-  // a.href = "/package_details.html"
+  a.href = "/package_details.html"
 
   item.addEventListener("click",() => {
     const city = item.ariaValueText;  
     localStorage.setItem("city_id",city)
-    // a.click();
+    a.click();
   })
 })
 
