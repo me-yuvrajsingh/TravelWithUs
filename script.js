@@ -11,7 +11,7 @@ const package_details_card = document.querySelectorAll(".package_details_card")
 const box_container = document.querySelector(".box-container")
 
 //base api url
-const BASE_URL = "http://localhost:8000"
+const BASE_URL = "https://travel-app-backend-uoup.onrender.com"
 
 //register 
 const fullname = document.querySelector(".fullname");
