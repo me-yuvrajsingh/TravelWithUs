@@ -14,7 +14,7 @@ const hotel_location = document.querySelectorAll(".hotel_location");
 
 
 //base api url
-const BASE_URL = "http://localhost:8000"
+const BASE_URL = "https://travel-app-backend-uoup.onrender.com"
 
 //book now
 const whereto = document.querySelector(".whereto");
